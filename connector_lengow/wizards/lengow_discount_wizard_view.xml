@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lengow_discount_wizard_form" model="ir.ui.view">
+        <field name="name">view.lengow.discount.wizard.form</field>
+        <field name="model">lengow.discount.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Lengow Product Discount">
+                <div invisible="context.get('reset',False)">
+                    <label for="discount"/>
+                    <field name="discount" class="oe_inline"
+                           required="not context.get('reset', False)"/>
+                    <field name="discount_type"  class="oe_inline"/>
+                    <label for="discount_start" string="From"/>
+                    <field name="discount_start" class="oe_inline"
+                           required="not context.get('reset', False)"/>
+                    <label for="discount_end" string="To"/>
+                    <field name="discount_end" class="oe_inline"
+                           required="not context.get('reset', False)"/>
+                </div>
+                <group>
+                    <field name='lengow_product_ids' nolabel="1"
+                           readonly="1">
+                         <tree create="0" edit="0">
+                            <field name="backend_id"/>
+                            <field name="catalogue_id"/>
+                            <field name="default_code"/>
+                            <field name="name"/>
+                            <field name="sale_price"/>
+                            <field name="sale_from_date"/>
+                            <field name="sale_end_date"/>
+                         </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button string="Define Discount" name="action_confirm"
+                            type="object" class="oe_highlight"
+                            invisible="context.get('reset',False)"/>
+                    <button string="Reset Discount" name="action_confirm"
+                            type="object" class="oe_highlight"
+                            invisible="not context.get('reset',False)"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lengow_discount_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Define a Discount</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">lengow.discount.wizard</field>
+        <field name="view_type">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_lengow_discount_wizard_form"/>
+        <field name="groups_id" eval="[(4, ref('group_lengow_manager'))]"/>
+    </record>
+
+    <record id="action_lengow_reset_discount_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Reset Discount</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">lengow.discount.wizard</field>
+        <field name="view_type">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_lengow_discount_wizard_form"/>
+        <field name="groups_id" eval="[(4, ref('group_lengow_manager'))]"/>
+        <field name="context">{'reset': True}</field>
+    </record>
+
+    <record id="ir_lengow_product_discount_wizard" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'lengow.product.product'" name="model"/>
+        <field name="name">Manage Discount</field>
+        <field eval="'ir.actions.act_window,'+str(action_lengow_discount_wizard)" name="value"/>
+    </record>
+
+    <record id="ir_lengow_product_reset_discount_wizard" model="ir.values">
+        <field eval="'client_action_multi'" name="key2"/>
+        <field eval="'lengow.product.product'" name="model"/>
+        <field name="name">Reset Discount</field>
+        <field eval="'ir.actions.act_window,'+str(action_lengow_reset_discount_wizard)" name="value"/>
+    </record>
+
+</odoo>
+

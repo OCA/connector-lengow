@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lengow_product_product_search" model="ir.ui.view">
+        <field name="name">lengow.product.product.search</field>
+        <field name="model">lengow.product.product</field>
+        <field name="arch" type="xml">
+            <search string="Products">
+                <field name="name" string="Product"/>
+                <field name="backend_id" string="Lengow Backend"/>
+                <field name="catalogue_id" string="Catalogue"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Lengow Backend" name="group_by_backend_id" domain="[]" context="{'group_by':'backend_id'}"/>
+                    <filter string="Catalogue" name="group_by_catalogue_id" domain="[]" context="{'group_by':'catalogue_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_lengow_product_product_tree" model="ir.ui.view">
+        <field name="name">lengow.product.product.tree</field>
+        <field name="model">lengow.product.product</field>
+        <field name="arch" type="xml">
+            <tree string="Lengow Product Product" create="0">
+                <field name="backend_id"/>
+                <field name="catalogue_id"/>
+                <field name="default_code"/>
+                <field name="name"/>
+                <field name="product_url"/>
+                <field name="image_url"/>
+                <field name="state"/>
+                <field name="lengow_qty"/>
+                <field name="price"/>
+                <field name="sale_price"/>
+                <field name="sale_from_date"/>
+                <field name="sale_end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_lengow_product_product" model="ir.actions.act_window">
+        <field name="name">Lengow Product Products</field>
+        <field name="res_model">lengow.product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_lengow_product_product_tree"/>
+        <field name="context">{'search_default_group_by_backend_id': 1,
+                               'search_default_group_by_catalogue_id': 1}</field>
+        <field name="groups_id" eval="[(4, ref('group_lengow_user'))]"/>
+    </record>
+
+    <record id="action_lengow_product_product_no_group_by" model="ir.actions.act_window">
+        <field name="name">Lengow Product Products</field>
+        <field name="res_model">lengow.product.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_lengow_product_product_tree"/>
+    </record>
+
+    <record id="product_normal_form_view" model="ir.ui.view">
+        <field name="name">product.product.form</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="connector_base_product.product_normal_form_view"/>
+        <field name="groups_id" eval="[(4, ref('group_lengow_user'))]"/>
+        <field name="arch" type="xml">
+            <page name="connector" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </page>
+            <page name="connector" position="inside">
+                <group string="Lengow Bindings">
+                    <field name="lengow_bind_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="backend_id"/>
+                            <field name="catalogue_id"/>
+                        </tree>
+                    </field>
+                </group>
+            </page>
+        </field>
+    </record>
+
+    <record id="product_search_form_view" model="ir.ui.view">
+        <field name="name">product.product.search</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_search_form_view"/>
+        <field name="groups_id" eval="[(4, ref('group_lengow_user'))]"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="lengow_catalogue_ids" string="Lengow Catalogue"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="groups_id" eval="[(4, ref('group_lengow_user'))]"/>
+        <field name="arch" type="xml">
+            <page name="sales" position="inside">
+                <group name="lengow" string="Lengow">
+                    <field name="lengow_catalogue_ids" widget="many2many_tags"/>
+                </group>
+            </page>
+        </field>
+    </record>
+
+    <record id="product_template_search_view" model="ir.ui.view">
+        <field name="name">product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="groups_id" eval="[(4, ref('group_lengow_user'))]"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="lengow_catalogue_ids" string="Lengow Catalogue"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
+
