@@ -261,7 +261,7 @@ class LengowProductAdapter(Component):
 
 
 class LengowProductExporter(Component):
-    __name = 'lengow.product.exporter'
+    _name = 'lengow.product.exporter'
     _inherit = 'lengow.exporter'
     _apply_on = 'lengow.product.product'
 
