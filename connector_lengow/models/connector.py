@@ -36,7 +36,7 @@ class LengowBinding(models.AbstractModel):
     @job(default_channel='root.lengow')
     @api.model
     def import_batch(self, backend, filters=None):
-        """ Prepare the import of records modified on Magento """
+        """ Prepare the import of records modified on Lengow """
         if filters is None:
             filters = {}
         with backend.work_on(self._name) as work:
