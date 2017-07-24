@@ -52,8 +52,6 @@ class LengowProductProduct(models.Model):
     @job(default_channel='root.lengow')
     @api.multi
     def export_products(self, catalogue_id):
-        """ Export a complete or partial delivery order. """
-        self.ensure_one()
         exporter = self.component(usage='record.exporter')
         res = exporter.run(self, catalogue_id)
         return res
