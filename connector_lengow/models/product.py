@@ -52,9 +52,10 @@ class LengowProductProduct(models.Model):
     @job(default_channel='root.lengow')
     @api.multi
     def export_products(self, catalogue_id):
-        exporter = self.component(usage='record.exporter')
-        res = exporter.run(self, catalogue_id)
-        return res
+        with catalogue_id.backend_id.work_on('lengow.product.product') as work:
+            exporter = work.component(usage='record.exporter')
+            res = exporter.run(catalogue_id)
+            return res
 
     @api.multi
     def compute_lengow_qty(self):
