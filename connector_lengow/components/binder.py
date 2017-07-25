@@ -36,9 +36,7 @@ class LengowModelBinder(Component):
              (self._backend_field, '=', self.backend_record.id)]
         )
         if not bindings:
-            if unwrap:
-                return self.model.browse()[self._odoo_field]
-            return self.model.browse()
+            return None
 
         if len(bindings) > 1:
             # can be the case for lengow.product.product because the same
