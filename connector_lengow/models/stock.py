@@ -32,11 +32,10 @@ class LengowStockPicking(models.Model):
     def export_picking_done(self):
         """ Export a complete or partial delivery order. """
         self.ensure_one()
-        self.ensure_one()
         with self.lengow_order_id.backend_id.work_on(
                 'lengow.stock.picking') as work:
             exporter = work.component(usage='record.exporter')
-            res = exporter.run()
+            res = exporter.run(self.id)
             return res
         return res
 
