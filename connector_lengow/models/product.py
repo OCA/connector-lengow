@@ -32,9 +32,6 @@ class LengowProductProduct(models.Model):
                               string='Product',
                               required=True,
                               ondelete='restrict')
-    lengow_qty = fields.Float(string='Computed Stock Quantity',
-                              help="Last computed quantity to send "
-                                   "on Lengow.")
     active = fields.Boolean(default=True)
     lengow_price = fields.Float('Price',
                                 compute='_compute_price',
@@ -56,24 +53,6 @@ class LengowProductProduct(models.Model):
             exporter = work.component(usage='record.exporter')
             res = exporter.run(catalogue_id)
             return res
-
-    @api.multi
-    def compute_lengow_qty(self):
-        for product in self:
-            if product.catalogue_id.product_stock_field_id:
-                stock_field = product.catalogue_id.product_stock_field_id.name
-            else:
-                stock_field = 'virtual_available'
-
-            location = self.env['stock.location']
-            if self.env.context.get('location'):
-                location = location.browse(self.env.context['location'])
-            else:
-                location = product.catalogue_id.warehouse_id.lot_stock_id
-
-            product.sudo().write({'lengow_qty':
-                                  product.with_context(location=location.id)
-                                  [stock_field]})
 
     @api.multi
     def _compute_price(self):
@@ -203,7 +182,8 @@ class LengowProductExportMapper(Component):
 
     @mapping
     def QUANTITY(self, record):
-        qty = int(record.lengow_qty)
+        stock_field = record.env.context.get('stock_field')
+        qty = int(record[stock_field])
         return {'QUANTITY': qty}
 
     @mapping
@@ -281,13 +261,27 @@ class LengowProductExporter(Component):
         adapter = self.component(usage='backend.adapter')
         csvFile = StringIO()
         csvRows = [adapter.getCSVHeader()]
-        products = catalogue.binded_product_ids
-        products.compute_lengow_qty()
+
+        location = self.env['stock.location']
+        if self.env.context.get('location'):
+            location = location.browse(self.env.context['location'])
+        else:
+            location = catalogue.warehouse_id.lot_stock_id
+
         if catalogue.default_lang_id:
             lang = catalogue.default_lang_id.code
         else:
             lang = self.env.user.lang or 'en_US'
-        for product in products.with_context(lang=lang):
+
+        if catalogue.product_stock_field_id:
+            stock_field = catalogue.product_stock_field_id.name
+        else:
+            stock_field = 'virtual_available'
+
+        products = catalogue.binded_product_ids.with_context(
+            lang=lang, location=location.id, stock_field=stock_field)
+
+        for product in products:
             self._lengow_record = product
             map_record = self._map_data()
             vals = self.export(map_record)
