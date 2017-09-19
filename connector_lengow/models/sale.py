@@ -97,6 +97,12 @@ class SaleOrder(models.Model):
             else:
                 order.lengow_total_amount_tax = False
 
+    def _prepare_invoice(self):
+        invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        if 'reference' not in invoice_vals:
+            invoice_vals['reference'] = self.name
+        return invoice_vals
+
 
 class LengowSaleOrderAdapter(Component):
     _name = 'lengow.sale.order.adapter'

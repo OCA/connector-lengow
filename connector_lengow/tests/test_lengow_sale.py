@@ -194,6 +194,7 @@ class TestImportSaleOrders20(common.SetUpLengowBase20):
         self.assertTrue(order.invoice_ids)
         invoice = order.invoice_ids
         self.assertEqual(invoice.state, 'paid')
+        self.assertEqual(invoice.reference, order.name)
 
         # route for auto-delivery should be assigned on each line
         self.assertTrue(order.order_line[0].route_id.id, self.route.id)
