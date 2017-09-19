@@ -6,16 +6,16 @@ from cStringIO import StringIO
 import csv
 from collections import OrderedDict
 import logging
+from odoo import api, fields, models
+from odoo.addons.queue_job.job import job
+from odoo.addons.component.core import Component
+from odoo.addons.connector.components.mapper import mapping
+
 _logger = logging.getLogger(__name__)
 try:
     import ftputil.session
 except (ImportError, IOError) as err:
     _logger.debug(err)
-
-from odoo import api, fields, models
-from odoo.addons.queue_job.job import job
-from odoo.addons.component.core import Component
-from odoo.addons.connector.components.mapper import mapping
 
 
 class LengowProductProduct(models.Model):

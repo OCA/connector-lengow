@@ -35,6 +35,7 @@ class TestStock20(common.SetUpLengowBase20):
         self.assertEqual(jobs.name, 'Export Lengow Picking %s'
                          ' (Order: AMAZON-999-2121515-6705141)' % picking.name)
 
-        with self.backend.work_on('lengow.stock.picking') as work:
-            exporter = work.component(usage='record.exporter')
-            exporter.run(self.picking.lengow_bind_ids.id)
+        with self.assertRaises(AssertionError):
+            with self.backend.work_on('lengow.stock.picking') as work:
+                exporter = work.component(usage='record.exporter')
+                exporter.run(self.picking.lengow_bind_ids.id)
