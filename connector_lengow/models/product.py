@@ -49,6 +49,8 @@ class LengowProductProduct(models.Model):
     @job(default_channel='root.lengow')
     @api.multi
     def export_products(self, catalogue_id):
+        job_uuid = self.env.context.get('job_uuid', False)
+        catalogue_id = catalogue_id.with_context(job_uuid=job_uuid)
         with catalogue_id.backend_id.work_on('lengow.product.product') as work:
             exporter = work.component(usage='record.exporter')
             res = exporter.run(catalogue_id)
