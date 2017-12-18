@@ -61,17 +61,12 @@ class TestStock20(common.SetUpLengowBase20):
         with mock.patch(self.post_method) as mock_post:
             mock_post = self._configure_mock_request('fnac_update',
                                                      mock_post)
-            self.picking.write({'carrier_tracking_ref': 'tracking code test'})
-            self.picking.force_assign()
-            self.picking.do_transfer()
-            with self.assertRaises(ValidationError):
-                # For Fnac carrier code are restricted to an allowed list
-                with self.backend.work_on('lengow.stock.picking') as work:
-                    exporter = work.component(usage='record.exporter')
-                    exporter.run(self.picking.lengow_bind_ids.id)
 
             carrier = self.env.ref('connector_lengow_fnac.carrier_fnac_ups')
-            self.picking.write({'carrier_id': carrier.id})
+            self.picking.write({'carrier_tracking_ref': 'tracking code test',
+                                'carrier_id': carrier.id})
+            self.picking.force_assign()
+            self.picking.do_transfer()
 
             with self.backend.work_on('lengow.stock.picking') as work:
                 exporter = work.component(usage='record.exporter')
