@@ -1,6 +1,7 @@
 "id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
 "access_lengow_backend_manager","lengow_backend lengow manager","model_lengow_backend","group_lengow_manager",1,1,1,1
 "access_lengow_backend_user","lengow_backend lengow user","model_lengow_backend","group_lengow_user",1,0,0,0
+"access_lengow_stock_user","lengow_backend stock user","model_lengow_backend","stock.group_stock_user",1,0,0,0
 "access_lengow_catalogue_manager","lengow_catalogue lengow manager","model_lengow_catalogue","group_lengow_manager",1,1,1,1
 "access_lengow_catalogue_user","lengow_catalogue lengow user","model_lengow_catalogue","group_lengow_user",1,0,0,0
 "access_lengow_product_product_manager","lengow_product_product lengow manager","model_lengow_product_product","group_lengow_manager",1,1,1,1
@@ -8,6 +9,7 @@
 "access_lengow_product_product_sale_user","lengo_product_product sale user","model_lengow_product_product","sales_team.group_sale_salesman",1,0,0,0
 "access_lengow_market_place_manager","lengow_market_place lengow manager","model_lengow_market_place","group_lengow_manager",1,1,1,1
 "access_lengow_market_place_user","lengow_market_place lengow user","model_lengow_market_place","group_lengow_user",1,0,0,0
+"access_lengow_market_place_stock_user","lengow_market_place stock user","model_lengow_market_place","stock.group_stock_user",1,0,0,0
 "access_lengow_sale_order_sale_salesman","lengow_sale_order","model_lengow_sale_order","sales_team.group_sale_salesman",1,1,1,0
 "access_lengow_sale_order_sale_manager","lengow_sale_order","model_lengow_sale_order","sales_team.group_sale_manager",1,1,1,0
 "access_lengow_sale_order_line_sale_salesman","lengow_sale_order_line","model_lengow_sale_order_line","sales_team.group_sale_salesman",1,1,1,0
