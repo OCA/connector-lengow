@@ -13,6 +13,14 @@ class NatdecPlaceConfigurator(MarketPlaceConfigurator):
     _param_tracking_carrier_name = 'carrier_code'
     _param_tracking_unknown_carrier_name = 'carrier_name'
     _tracking_mandatory = True
+    _restricted_carrier_code = {
+        'CO',
+        'CHR',
+        'COS',
+        'Group',
+        'UPS',
+        'SEUR',
+    }
 
     def get_export_picking_api(self, id_flux, order_id):
         url = 'natdec/%s/%s/shipped.xml'
