@@ -38,4 +38,4 @@ class TestStock20(common.SetUpLengowBase20):
         with self.assertRaises(AssertionError):
             with self.backend.work_on('lengow.stock.picking') as work:
                 exporter = work.component(usage='record.exporter')
-                exporter.run(self.picking.lengow_bind_ids.id)
+                exporter.run(picking.lengow_bind_ids.id)

@@ -216,7 +216,135 @@ class SetUpLengowBase20(SetUpLengowBase):
                                 "shipping_price": "",
                                 "tax": "",
                                 "status": ""
-                            }]}}]
+                            }]}}, {
+                        "marketplace": "amazon",
+                        "idFlux": "99128",
+                        "order_status": {
+                            "marketplace": "accept",
+                            "lengow": "processing"
+                        },
+                        "order_id": "999-2121615-6705263",
+                        "order_mrid": "999-2121615-6705263",
+                        "order_refid": "999-2121615-6705263",
+                        "order_external_id": "99352",
+                        "order_purchase_date": fields.Date.today(),
+                        "order_purchase_heure": "04:51:24",
+                        "order_amount": "305.65",
+                        "order_tax": "0.00",
+                        "order_shipping": "5.9",
+                        "order_commission": "0.0",
+                        "order_processing_fee": "0",
+                        "order_currency": "EUR",
+                        "order_payment": {
+                            "payment_checkout": "",
+                            "payment_status": "",
+                            "payment_type": "",
+                            "payment_date": fields.Date.today(),
+                            "payment_heure": "04:51:24"
+                        },
+                        "order_invoice": {
+                            "invoice_number": "",
+                            "invoice_url": ""
+                        },
+                        "billing_address": {
+                            "billing_society": "Company X",
+                            "billing_civility": "",
+                            "billing_lastname": "Mister Lengow A",
+                            "billing_firstname": "",
+                            "billing_email": "LengowA@marketplace."
+                                             "amazon.de",
+                            "billing_address": "Lengow",
+                            "billing_address_2": "",
+                            "billing_address_complement": "Lengow",
+                            "billing_zipcode": "44000",
+                            "billing_city": "Nantes",
+                            "billing_country": "FR",
+                            "billing_country_iso": "FR",
+                            "billing_phone_home": "099999689492",
+                            "billing_phone_office": "",
+                            "billing_phone_mobile": "099999689493",
+                            "billing_full_address": "Lengow"
+                        },
+                        "delivery_address": {
+                            "delivery_society": "Company Y",
+                            "delivery_civility": "",
+                            "delivery_lastname": "Mister Lengow B",
+                            "delivery_firstname": "",
+                            "delivery_email": "",
+                            "delivery_address": "Lengow",
+                            "delivery_address_2": "",
+                            "delivery_address_complement": "Lengow",
+                            "delivery_zipcode": "44000",
+                            "delivery_city": "Nantes",
+                            "delivery_country": "FR",
+                            "delivery_country_iso": "FR",
+                            "delivery_phone_home": "099999689492",
+                            "delivery_phone_office": "",
+                            "delivery_phone_mobile": "",
+                            "delivery_full_address": "Lengow"
+                        },
+                        "tracking_informations": {
+                            "tracking_method": "",
+                            "tracking_carrier": "Standard",
+                            "tracking_number": "",
+                            "tracking_url": "",
+                            "tracking_shipped_date": "2016-10-01"
+                                                     " 09:32:16",
+                            "tracking_relay": "",
+                            "tracking_deliveringByMarketPlace": "1",
+                            "tracking_parcel_weight": ""
+                        },
+                        "order_comments": "",
+                        "customer_id": "",
+                        "order_ip": "",
+                        "order_items": "1",
+                        "cart": {
+                            "nb_orders": "1",
+                            "products": [{
+                                "idLengow": "9999_33543",
+                                "idMP": "9999_33543",
+                                "sku": "9999_33543",
+                                "ean": "",
+                                "title": "Pantalon G-star rovic slim, micro "
+                                         "stretch twill GS Dk Fig Taille "
+                                         "W29/L32",
+                                "category": "Accueil > HOMME > JEANS/PANTALONS"
+                                            " > PANTALONS",
+                                "brand": "",
+                                "url_product": "http://lengow.com/product.php"
+                                               "?id\\_product=11199",
+                                "url_image": "http://lengow.com/img/p/"
+                                             "11199-42104-large.jpg",
+                                "order_lineid": "",
+                                "quantity": "2",
+                                "price": "199.8",
+                                "price_unit": "99.90",
+                                "shipping_price": "",
+                                "tax": "",
+                                "status": ""
+                            }, {
+                                "idLengow": "9999_33544",
+                                "idMP": "9999_33544",
+                                "sku": "9999_33544",
+                                "ean": "",
+                                "title": "Pantalon G-star rovic slim, micro "
+                                         "stretch twill GS Dk Fig Taille "
+                                         "W30/L33",
+                                "category": "Accueil > HOMME > JEANS/PANTALONS"
+                                            " > PANTALONS",
+                                "url_product": "http://lengow.com/product.php"
+                                               "?id\\_product=11198",
+                                "url_image": "http://lengow.com/img/p/"
+                                             "11199-42102-large.jpg",
+                                "quantity": "1",
+                                "order_lineid": "",
+                                "price": "99.95",
+                                "price_unit": "99.95",
+                                "shipping_price": "",
+                                "tax": "",
+                                "status": ""
+                            }]}},
+                    ]
                 }
             }}
         self.product1 = self.env.ref('product.product_product_9')

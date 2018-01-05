@@ -8,7 +8,7 @@ class TestLengowProductBinding(common.SetUpLengowBase20):
 
     def setUp(self):
         super(TestLengowProductBinding, self).setUp()
-        self.product = self.env.ref('product.product_product_9')
+        self.product = self.env.ref('product.product_product_12')
 
     def test_product_binding(self):
         '''

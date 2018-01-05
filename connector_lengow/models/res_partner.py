@@ -39,6 +39,8 @@ class PartnerImportMapper(Component):
                              record['firstname']])
         else:
             name = record['lastname']
+        if record['society']:
+            name = '%s, %s' % (record['society'], name)
         return {'name': name}
 
     @mapping

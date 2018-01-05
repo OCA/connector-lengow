@@ -37,6 +37,22 @@ class TestImportSaleOrders20(common.SetUpLengowBase20):
         self.assertEqual(order.partner_shipping_id.name, "Lengow B")
         self.assertEqual(order.partner_invoice_id.name, "Lengow A")
 
+        # import order with a company name in billing and delivery addresses
+        with self.backend.work_on('lengow.sale.order') as work:
+            sale_importer = work.component(usage='record.importer')
+
+            order_message = self.json_data['orders']['json']
+            order_data = order_message['orders'][1]
+            sale_importer.run('999-2121615-6705263', order_data)
+        order = self.env['sale.order'].search([('client_order_ref',
+                                                '=',
+                                                '999-2121615-6705263')])
+        self.assertEqual(order.partner_id.name, "Company X, Mister Lengow A")
+        self.assertEqual(order.partner_shipping_id.name,
+                         "Company Y, Mister Lengow B")
+        self.assertEqual(order.partner_invoice_id.name,
+                         "Company X, Mister Lengow A")
+
     def test_import_sale_order_date_filter(self):
         with mock.patch(self.get_method) as mock_get:
             # mock get request for orders data
@@ -101,10 +117,15 @@ class TestImportSaleOrders20(common.SetUpLengowBase20):
                     headers={})
                 jobs = self.env['queue.job'].search([TRUE_LEAF])
 
-                self.assertEqual(len(jobs), 1)
-                self.assertEqual(
-                    jobs.name, 'Import lengow.sale.order 999-2121515-6705141'
-                    ' from Lengow Backend Test Lengow')
+                self.assertEqual(len(jobs), 2)
+                expected_names = [
+                    'Import lengow.sale.order 999-2121515-6705141'
+                    ' from Lengow Backend Test Lengow',
+                    'Import lengow.sale.order 999-2121615-6705263'
+                    ' from Lengow Backend Test Lengow'
+                ]
+                for qjob in jobs:
+                    self.assertIn(qjob.name, expected_names)
 
     def test_import_sale_order(self):
         with self.backend.work_on('lengow.sale.order') as work:
