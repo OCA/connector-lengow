@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_lengow_root"
+        parent="connector.menu_connector_root"
+        name="Lengow"
+        sequence="10"
+        groups="connector.group_connector_manager"/>
+
+    <menuitem id="menu_lengow_backend"
+        name="Backends"
+        parent="menu_lengow_root"
+        action="action_lengow_backend"
+        sequence="10"/>
+
+    <menuitem id="menu_lengow_marketplace"
+        name="MarketPlaces"
+        parent="menu_lengow_root"
+        action="action_lengow_marketplace"
+        sequence="20"/>
+
+    <menuitem id="menu_lengow_catalogue"
+        name="Catalogues"
+        parent="menu_lengow_root"
+        action="action_lengow_catalogue"
+        sequence="30"/>
+
+    <menuitem id="menu_lengow_sale"
+        name="Lengow"
+        parent="sales_team.menu_base_partner"
+        sequence="10"/>
+
+    <menuitem id="menu_lengow_catalogue_sale"
+        name="Catalogues"
+        parent="menu_lengow_sale"
+        action="action_lengow_catalogue"
+        sequence="10"/>
+
+</odoo>
+

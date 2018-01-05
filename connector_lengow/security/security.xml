@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo  noupdate="1">
+
+    <!--  Lengow CATEGORY -->
+    <record model="ir.module.category" id="module_category_lengow">
+        <field name="name">Lengow</field>
+        <field name="description">Lengow Connector Management</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record model="res.groups" id="group_lengow_user">
+        <field name="name">Lengow User</field>
+        <field name="category_id" ref="connector_lengow.module_category_lengow"/>
+    </record>
+
+
+     <record model="res.groups" id="group_lengow_manager">
+        <field name="name">Lengow Manager</field>
+        <field name="category_id" ref="connector_lengow.module_category_lengow"/>
+        <field name="implied_ids" eval="[
+            (4, ref('connector.group_connector_manager')),
+            (4, ref('group_lengow_user'))
+        ]" />
+    </record>
+
+    <record id="lengow_backend_multi_company_rule" model="ir.rule">
+        <field name="name">Lengow Backend Multi Company</field>
+        <field name="model_id" ref="model_lengow_backend"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record id="lengow_marketplace_multi_company_rule" model="ir.rule">
+        <field name="name">Lengow MarketPlace Multi Company</field>
+        <field name="model_id" ref="model_lengow_market_place"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('backend_id.company_id.id','=',False),('backend_id.company_id.id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record id="lengow_catalogue_multi_company_rule" model="ir.rule">
+        <field name="name">Lengow Catalogue Multi Company</field>
+        <field name="model_id" ref="model_lengow_catalogue"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('backend_id.company_id.id','=',False),('backend_id.company_id.id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record id="lengow_product_multi_company_rule" model="ir.rule">
+        <field name="name">Lengow Product Multi Company</field>
+        <field name="model_id" ref="model_lengow_product_product"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('backend_id.company_id.id','=',False),('backend_id.company_id.id','child_of',[user.company_id.id])]</field>
+    </record>
+
+</odoo>
+

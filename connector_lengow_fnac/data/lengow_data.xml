@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="carrier_fnac_adrexo" model="delivery.carrier">
+        <field name="name">ADREXO for FNAC (Lengow)</field>
+        <field name="lengow_code">ADREXO</field>
+    </record>
+
+    <record id="carrier_fnac_chronopost" model="delivery.carrier">
+        <field name="name">Chronopost for FNAC (Lengow)</field>
+        <field name="lengow_code">CHRONOPOST</field>
+    </record>
+
+    <record id="carrier_fnac_colisprive" model="delivery.carrier">
+        <field name="name">COLISPRIVE for FNAC (Lengow)</field>
+        <field name="lengow_code">COLISPRIVE</field>
+    </record>
+
+    <record id="carrier_fnac_dhl" model="delivery.carrier">
+        <field name="name">DHL for FNAC (Lengow)</field>
+        <field name="lengow_code">DHL</field>
+    </record>
+
+    <record id="carrier_fnac_dhl_de" model="delivery.carrier">
+        <field name="name">DHL.DE for FNAC (Lengow)</field>
+        <field name="lengow_code">DHLDE</field>
+    </record>
+
+    <record id="carrier_fnac_dpd" model="delivery.carrier">
+        <field name="name">DPD for FNAC (Lengow)</field>
+        <field name="lengow_code">DPD</field>
+    </record>
+
+    <record id="carrier_fnac_ducros" model="delivery.carrier">
+        <field name="name">Ducros for FNAC (Lengow)</field>
+        <field name="lengow_code">DUCROS</field>
+    </record>
+
+    <record id="carrier_fnac_exapaq" model="delivery.carrier">
+        <field name="name">Exapaq for FNAC (Lengow)</field>
+        <field name="lengow_code">EXAPAQ</field>
+    </record>
+
+    <record id="carrier_fnac_fedex" model="delivery.carrier">
+        <field name="name">Fedex for FNAC (Lengow)</field>
+        <field name="lengow_code">FEDEX</field>
+    </record>
+
+    <record id="carrier_fnac_franceexpress" model="delivery.carrier">
+        <field name="name">France Express for FNAC (Lengow)</field>
+        <field name="lengow_code">FRANCEEXPRESS</field>
+    </record>
+
+    <record id="carrier_fnac_geodis_calberson" model="delivery.carrier">
+        <field name="name">Geodis Calberson for FNAC (Lengow)</field>
+        <field name="lengow_code">GEODISCALBERSON</field>
+    </record>
+
+    <record id="carrier_fnac_gls" model="delivery.carrier">
+        <field name="name">GLS for FNAC (Lengow)</field>
+        <field name="lengow_code">GLS</field>
+    </record>
+
+    <record id="carrier_fnac_poste" model="delivery.carrier">
+        <field name="name">La Poste for FNAC (Lengow)</field>
+        <field name="lengow_code">LAPOSTE</field>
+    </record>
+
+    <record id="carrier_fnac_mondial_relay" model="delivery.carrier">
+        <field name="name">Mondial Relay for FNAC (Lengow)</field>
+        <field name="lengow_code">MONDIALRELAY</field>
+    </record>
+
+    <record id="carrier_fnac_mory_ducros" model="delivery.carrier">
+        <field name="name">Mory Ducros for FNAC (Lengow)</field>
+        <field name="lengow_code">MORYDUCROS</field>
+    </record>
+
+    <record id="carrier_fnac_schenker-joyau" model="delivery.carrier">
+        <field name="name">schenker-joyau for FNAC (Lengow)</field>
+        <field name="lengow_code">SCHENKERJOYAU</field>
+    </record>
+
+    <record id="carrier_fnac_sernam" model="delivery.carrier">
+        <field name="name">SERNAM for FNAC (Lengow)</field>
+        <field name="lengow_code">SERNAM</field>
+    </record>
+
+    <record id="carrier_fnac_socolissimo" model="delivery.carrier">
+        <field name="name">SoColissimo for FNAC (Lengow)</field>
+        <field name="lengow_code">SOCOLISSIMO</field>
+    </record>
+
+    <record id="carrier_fnac_tat_express" model="delivery.carrier">
+        <field name="name">TAT Express for FNAC (Lengow)</field>
+        <field name="lengow_code">TAT</field>
+    </record>
+
+    <record id="carrier_fnac_tnt" model="delivery.carrier">
+        <field name="name">Tnt for FNAC (Lengow)</field>
+        <field name="lengow_code">TNT</field>
+    </record>
+
+    <record id="carrier_fnac_ups" model="delivery.carrier">
+        <field name="name">UPS for FNAC (Lengow)</field>
+        <field name="lengow_code">UPS</field>
+    </record>
+
+</odoo>
+

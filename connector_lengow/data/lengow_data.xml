@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+        <record forcecreate="True" id="ir_cron_import_sale_orders" model="ir.cron">
+            <field name="name">Lengow - Import Sales Orders</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'lengow.backend'" name="model"/>
+            <field eval="'_scheduler_import_sale_orders'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+
+        <record forcecreate="True" id="ir_cron_export_product_catalogue" model="ir.cron">
+            <field name="name">Lengow - Export Catalogues</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'lengow.catalogue'" name="model"/>
+            <field eval="'_scheduler_export_catalogue'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+
+        <record id="excep_wrong_total_amount" model="exception.rule">
+            <field name="name">Total Amount differs from Lengow</field>
+            <field name="rule_group">sale</field>
+            <field name="description">The amount computed in Odoo doesn't match with the amount in Lengow.
+
+Cause:
+The taxes are probably different between Odoo and Lengow. A fiscal position could have changed the final price.
+
+Resolution:
+Check your taxes and fiscal positions configuration and correct them if necessary.</field>
+            <field name="sequence">30</field>
+            <field name="model">sale.order</field>
+            <field name="code">if sale.lengow_bind_ids and abs(sale.amount_total - sale.lengow_total_amount) >= 0.01: failed = True</field>
+            <field name="active" eval="True"/>
+        </record>
+</odoo>
+

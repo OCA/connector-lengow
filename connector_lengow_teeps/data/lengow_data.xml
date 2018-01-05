@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="carrier_teeps_chronopost" model="delivery.carrier">
+        <field name="name">Chronopost for Teeps (Lengow)</field>
+        <field name="lengow_code">chronopost</field>
+    </record>
+
+    <record id="carrier_teeps_lapostecourriersuivi" model="delivery.carrier">
+        <field name="name">lapostecourriersuivi for Teeps (Lengow)</field>
+        <field name="lengow_code">lapostecourriersuivi</field>
+    </record>
+
+    <record id="carrier_teeps_chronorelais" model="delivery.carrier">
+        <field name="name">chronorelais for Teeps (Lengow)</field>
+        <field name="lengow_code">chronorelais</field>
+    </record>
+
+    <record id="carrier_teeps_colissimo" model="delivery.carrier">
+        <field name="name">colissimo for Teeps (Lengow)</field>
+        <field name="lengow_code">colissimo</field>
+    </record>
+
+    <record id="carrier_teeps_ups" model="delivery.carrier">
+        <field name="name">UPS for Teeps (Lengow)</field>
+        <field name="lengow_code">ups</field>
+    </record>
+
+    <record id="carrier_teeps_fedex" model="delivery.carrier">
+        <field name="name">fedex for Teeps (Lengow)</field>
+        <field name="lengow_code">fedex</field>
+    </record>
+
+    <record id="carrier_teeps_dhl" model="delivery.carrier">
+        <field name="name">DHL for Teeps (Lengow)</field>
+        <field name="lengow_code">dhl</field>
+    </record>
+
+    <record id="carrier_teeps_usps" model="delivery.carrier">
+        <field name="name">usps for Teeps (Lengow)</field>
+        <field name="lengow_code">usps</field>
+    </record>
+
+    <record id="carrier_teeps_tnt" model="delivery.carrier">
+        <field name="name">TNT for Teeps (Lengow)</field>
+        <field name="lengow_code">tnt</field>
+    </record>
+
+    <record id="carrier_teeps_parcelforce" model="delivery.carrier">
+        <field name="name">parcelforce for Teeps (Lengow)</field>
+        <field name="lengow_code">parcelforce</field>
+    </record>
+
+    <record id="carrier_teeps_exapaq" model="delivery.carrier">
+        <field name="name">exapaq for Teeps (Lengow)</field>
+        <field name="lengow_code">exapaq</field>
+    </record>
+
+    <record id="carrier_teeps_gls" model="delivery.carrier">
+        <field name="name">GLS for Teeps (Lengow)</field>
+        <field name="lengow_code">gls</field>
+    </record>
+
+</odoo>
+

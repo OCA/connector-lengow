@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="carrier_natdec_colissimo" model="delivery.carrier">
+        <field name="name">Colissimo for Nature et Découvertes (Lengow)</field>
+        <field name="lengow_code">CO</field>
+    </record>
+
+    <record id="carrier_natdec_chronopost" model="delivery.carrier">
+        <field name="name">Chronopost for Nature et Découvertes (Lengow)</field>
+        <field name="lengow_code">CHR</field>
+    </record>
+
+    <record id="carrier_natdec_courrier_suivi" model="delivery.carrier">
+        <field name="name">Courrier suivi for Nature et Découvertes (Lengow)</field>
+        <field name="lengow_code">COS</field>
+    </record>
+
+    <record id="carrier_natdec_gls" model="delivery.carrier">
+        <field name="name">GLS for Nature et Découvertes (Lengow)</field>
+        <field name="lengow_code">Group</field>
+    </record>
+
+    <record id="carrier_natdec_ups" model="delivery.carrier">
+        <field name="name">UPS for Nature et Découvertes (Lengow)</field>
+        <field name="lengow_code">UPS</field>
+    </record>
+</odoo>
+
