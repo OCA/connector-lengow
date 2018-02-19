@@ -125,3 +125,31 @@ class TestLengowProductBinding(common.SetUpLengowBase20):
              ('lengow_id', '=', self.product.default_code)])
 
         self.assertEqual(len(bind_record), 0)
+
+    def test_onchange_catalogue_id(self):
+        """
+        Test for the onchange function _onchange_catalogue_id().
+        This function just have to return a domain to exclude product already
+        into the catalogue.
+        :return: bool
+        """
+        bind_wizard_model = self.bind_wizard_model
+        catalogue = self.catalogue
+        product_obj = self.env['product.product']
+        current_products = catalogue.binded_product_ids.mapped("odoo_id")
+        values = {
+            'catalogue_id': catalogue.id,
+        }
+        wizard = bind_wizard_model.create(values)
+        onchange = wizard._onchange_catalogue_id()
+        domains = onchange.get('domain', {})
+        product_domain = domains.get('product_ids', None)
+        current_products_ids = current_products.ids
+        # We should have a returned domain as a list
+        self.assertIsInstance(product_domain, list)
+        products_available = product_obj.search(product_domain)
+        # Every products found should NOT be into the list of
+        # product already into the catalogue
+        for product_available in products_available:
+            self.assertNotIn(product_available.id, current_products_ids)
+        return True

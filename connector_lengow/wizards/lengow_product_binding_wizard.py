@@ -24,6 +24,29 @@ class LengowProductBindingWizard(models.TransientModel):
             res['catalogue_id'] = catalogue_id
         return res
 
+    @api.onchange("catalogue_id")
+    def _onchange_catalogue_id(self):
+        """
+        Onchange function for the catalogue_id field.
+        This function add a domain on product_ids fields depending on the
+        catalogue_id, to avoid displaying already mapped products.
+        :return: dict
+        """
+        domain_dict = {}
+        if self.catalogue_id:
+            # Get every product.product already mapped
+            products = self.catalogue_id.binded_product_ids.mapped("odoo_id")
+            domain = [
+                ('id', 'not in', products.ids),
+            ]
+            domain_dict.update({
+                'product_ids': domain,
+            })
+        result = {
+            'domain': domain_dict,
+        }
+        return result
+
     @api.multi
     def bind_products(self):
         for wizard in self:
