@@ -333,6 +333,12 @@ class LengowSaleOrderImporter(Component):
         # sale order update is not managed
         return
 
+    def _create(self, data):
+        binding = super(LengowSaleOrderImporter, self)._create(data)
+        if binding.fiscal_position_id:
+            binding.odoo_id._compute_tax_id()
+        return binding
+
     def _update(self, binding, data):
         # sale order update is not managed
         return
