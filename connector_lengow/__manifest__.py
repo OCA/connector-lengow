@@ -4,7 +4,7 @@
 {
     "name": "Lengow Connector",
     "summary": "Module used to connect Odoo to Lengow",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     "category": "Connector",
     "website": "https://odoo-community.org/",
     "author": "Cédric Pigeon, ACSONE SA/NV, Odoo Community Association (OCA)",
