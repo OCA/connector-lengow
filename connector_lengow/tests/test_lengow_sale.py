@@ -250,11 +250,25 @@ class TestImportSaleOrders20(common.SetUpLengowBase20):
         self.assertEqual(len(order), 1)
 
     def test_import_sale_order_country_fiscal(self):
+        customer_taxe = self.env['account.tax'].create(
+            {'name': 'Test Taxe 1',
+             'type_tax_use': 'sale',
+             'amount': 0.15,
+             'price_include': False})
+
+        customer_taxe2 = self.env['account.tax'].create(
+            {'name': 'Test Taxe 2',
+             'type_tax_use': 'sale',
+             'amount': 0.15,
+             'price_include': False})
         fiscal_position = self.env['account.fiscal.position'].create(
             {
-                'name': 'Test Lengow'
+                'name': 'Test Lengow',
+                'tax_ids': [(0, 0, {'tax_src_id': customer_taxe.id,
+                                    'tax_dest_id': customer_taxe2.id})],
             }
         )
+        self.product1.write({'taxes_id': [(6, 0, [customer_taxe.id])]})
         self.env['lengow.tax.mapping'].create({
             'backend_id': self.backend.id,
             'country_id': self.env.ref('base.fr').id,
@@ -274,6 +288,7 @@ class TestImportSaleOrders20(common.SetUpLengowBase20):
 
         # order should use the right fiscal position
         self.assertEqual(order.fiscal_position_id.id, fiscal_position.id)
+        self.assertEqual(order.order_line[0].tax_id.id, customer_taxe2.id)
 
     def test_sale_currency_mapping_fail(self):
         gbp = self.env.ref('base.GBP')
