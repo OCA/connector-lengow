@@ -20,6 +20,7 @@ class NatdecPlaceConfigurator(MarketPlaceConfigurator):
         'Group',
         'UPS',
         'SEUR',
+        'TNT',
     }
 
     def get_export_picking_api(self, id_flux, order_id):
