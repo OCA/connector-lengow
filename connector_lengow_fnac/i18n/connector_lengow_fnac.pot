@@ -1,0 +1,162 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* connector_lengow_fnac
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_adrexo
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_adrexo_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_adrexo_product_template
+msgid "ADREXO for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_colisprive
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_colisprive_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_colisprive_product_template
+msgid "COLISPRIVE for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_chronopost
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_chronopost_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_chronopost_product_template
+msgid "Chronopost for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_dhl
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_dhl_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_dhl_product_template
+msgid "DHL for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_dhl_de
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_dhl_de_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_dhl_de_product_template
+msgid "DHL.DE for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_dpd
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_dpd_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_dpd_product_template
+msgid "DPD for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_ducros
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_ducros_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_ducros_product_template
+msgid "Ducros for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_exapaq
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_exapaq_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_exapaq_product_template
+msgid "Exapaq for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_fedex
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_fedex_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_fedex_product_template
+msgid "Fedex for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_franceexpress
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_franceexpress_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_franceexpress_product_template
+msgid "France Express for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_gls
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_gls_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_gls_product_template
+msgid "GLS for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_geodis_calberson
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_geodis_calberson_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_geodis_calberson_product_template
+msgid "Geodis Calberson for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_poste
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_poste_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_poste_product_template
+msgid "La Poste for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_mondial_relay
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_mondial_relay_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_mondial_relay_product_template
+msgid "Mondial Relay for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_mory_ducros
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_mory_ducros_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_mory_ducros_product_template
+msgid "Mory Ducros for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_sernam
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_sernam_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_sernam_product_template
+msgid "SERNAM for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_socolissimo
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_socolissimo_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_socolissimo_product_template
+msgid "SoColissimo for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_tat_express
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_tat_express_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_tat_express_product_template
+msgid "TAT Express for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_tnt
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_tnt_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_tnt_product_template
+msgid "Tnt for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_ups
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_ups_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_ups_product_template
+msgid "UPS for FNAC (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_fnac
+#: model:delivery.carrier,name:connector_lengow_fnac.carrier_fnac_schenker-joyau
+#: model:product.product,name:connector_lengow_fnac.carrier_fnac_schenker-joyau_product_product
+#: model:product.template,name:connector_lengow_fnac.carrier_fnac_schenker-joyau_product_template
+msgid "schenker-joyau for FNAC (Lengow)"
+msgstr ""
+
