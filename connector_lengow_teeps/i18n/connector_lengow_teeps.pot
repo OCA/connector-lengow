@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* connector_lengow_teeps
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_chronopost
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_chronopost_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_chronopost_product_template
+msgid "Chronopost for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_dhl
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_dhl_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_dhl_product_template
+msgid "DHL for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_gls
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_gls_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_gls_product_template
+msgid "GLS for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_tnt
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_tnt_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_tnt_product_template
+msgid "TNT for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_ups
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_ups_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_ups_product_template
+msgid "UPS for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_chronorelais
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_chronorelais_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_chronorelais_product_template
+msgid "chronorelais for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_colissimo
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_colissimo_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_colissimo_product_template
+msgid "colissimo for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_exapaq
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_exapaq_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_exapaq_product_template
+msgid "exapaq for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_fedex
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_fedex_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_fedex_product_template
+msgid "fedex for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_lapostecourriersuivi
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_lapostecourriersuivi_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_lapostecourriersuivi_product_template
+msgid "lapostecourriersuivi for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_parcelforce
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_parcelforce_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_parcelforce_product_template
+msgid "parcelforce for Teeps (Lengow)"
+msgstr ""
+
+#. module: connector_lengow_teeps
+#: model:delivery.carrier,name:connector_lengow_teeps.carrier_teeps_usps
+#: model:product.product,name:connector_lengow_teeps.carrier_teeps_usps_product_product
+#: model:product.template,name:connector_lengow_teeps.carrier_teeps_usps_product_template
+msgid "usps for Teeps (Lengow)"
+msgstr ""
+
