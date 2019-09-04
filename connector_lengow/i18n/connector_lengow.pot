@@ -1048,6 +1048,7 @@ msgstr ""
 
 #. module: connector_lengow
 #: model:ir.model.fields,field_description:connector_lengow.field_lengow_sale_order_ignore_exception
+#: model:ir.model.fields,field_description:connector_lengow.field_lengow_sale_order_line_ignore_exception
 msgid "Ignore Exceptions"
 msgstr ""
 
@@ -2118,11 +2119,6 @@ msgstr ""
 #. module: connector_lengow
 #: model:ir.model.fields,field_description:connector_lengow.field_lengow_product_product_route_ids
 msgid "Routes"
-msgstr ""
-
-#. module: connector_lengow
-#: model:ir.model.fields,field_description:connector_lengow.field_lengow_sale_order_rule_group
-msgid "Rule group"
 msgstr ""
 
 #. module: connector_lengow
