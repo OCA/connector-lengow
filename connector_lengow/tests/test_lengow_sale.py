@@ -53,6 +53,11 @@ class TestImportSaleOrders20(common.SetUpLengowBase20):
         self.assertEqual(order.partner_invoice_id.name,
                          "Company X, Mister Lengow A")
 
+        self.assertEqual(order.partner_shipping_id.parent_id,
+                         order.partner_id)
+        self.assertEqual(order.partner_shipping_id.type,
+                         'delivery')
+
     def test_import_sale_order_date_filter(self):
         with mock.patch(self.get_method) as mock_get:
             # mock get request for orders data
