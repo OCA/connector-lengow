@@ -353,6 +353,19 @@ class LengowSaleOrderImporter(Component):
         lengow_data['cart'] = lines
         return lengow_data
 
+    def _after_import(self, binding):
+        super(LengowSaleOrderImporter, self)._after_import(binding)
+        main_partner = binding.partner_id
+        shipping_partner = binding.partner_shipping_id
+
+        if (main_partner != shipping_partner and
+                shipping_partner.parent_id != main_partner):
+            data = {
+                'type': 'delivery',
+                'parent_id': main_partner.id
+            }
+            shipping_partner.write(data)
+
     def run(self, lengow_id, lengow_data):
         lengow_data = self._order_line_preprocess(lengow_data)
         return super(LengowSaleOrderImporter, self).run(lengow_id, lengow_data)
